@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/me-am-i/caesar-cipher-cli#readme",
   "dependencies": {
-    "commander": "^6.1.0"
+    "commander": "^6.2.1"
   }
 }
