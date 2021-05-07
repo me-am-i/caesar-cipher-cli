@@ -9,7 +9,3 @@ module.exports = async () => {
  return await asyncFunc();
 };
 
-
-
-
-
