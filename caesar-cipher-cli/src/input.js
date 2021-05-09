@@ -5,7 +5,8 @@ program
     .requiredOption('-a, --action <type>', 'an action encode/decode')
     .requiredOption('-s, --shift <number>', 'a shift')
     .option('-i, --input <path_to_file>', 'an input file')
-    .option('-o, --output <path_to_file>', 'an output file');
+    .option('-o, --output <path_to_file>', 'an output file')
+    .description('caesar cipher CLI tool');
 
 program.parse(process.argv);
 
