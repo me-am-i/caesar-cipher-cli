@@ -9,7 +9,7 @@ program
 
 program.parse(process.argv);
 
-let { shift, action, input, output } = program.opts();
+let { action, shift, input, output } = program.opts();
 
 if (action !== 'encode' && action !== 'decode') {
     process.stderr.write(`error: wrong value for action\r\n`);
@@ -23,4 +23,4 @@ if (isNaN(Number(shift))) {
 
 shift = Number(shift);
 
-module.exports = { shift, action, input, output };//program.opts();
+module.exports = { action, shift, input, output };//program.opts();
