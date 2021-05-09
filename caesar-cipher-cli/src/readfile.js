@@ -1,11 +1,14 @@
 const fs = require('fs').promises;
 const path = require('path');
-const input = require('./input');
+const args = require('./input');
 
-const filename = input.input;
+const fileName = path.normalize(args.input);
 
 module.exports = async () => {
- const asyncFunc = async () => await fs.readFile(filename, 'utf8');
- return await asyncFunc();
+  try {
+  return await fs.readFile(fileName, 'utf8');
+  } catch (error) {
+   console.error("error: File doesn't exist or not accessible, please ensure that path is correct", error.path) // from creation or business logic
+   process.exit(1);
+  }
 };
-
