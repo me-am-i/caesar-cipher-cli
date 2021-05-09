@@ -2,8 +2,9 @@ const fs = require('fs').promises;
 const path = require('path');
 const args = require('./input');
 
-const fileName = path.normalize(args.output);
-
+if (args.output) {
+    var fileName = path.normalize(args.output);
+}
 // module.exports = async () => {
 //     const asyncFunc = async () => await fs.appendFile('output.txt', 'demo text', 'utf8');
 //     //asyncFunc().then(console.log)
