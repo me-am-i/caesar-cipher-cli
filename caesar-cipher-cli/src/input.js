@@ -17,8 +17,13 @@ if (action !== 'encode' && action !== 'decode') {
     process.exit(1);
 }
 
-if (isNaN(Number(shift))) {
+else if (isNaN(Number(shift))) {
     process.stderr.write(`error: wrong value for shift\r\n`);
+    process.exit(1);
+}
+
+else if (input == output && input) {
+    process.stderr.write(`error: output file can\`t point to input file \r\n`);
     process.exit(1);
 }
 
