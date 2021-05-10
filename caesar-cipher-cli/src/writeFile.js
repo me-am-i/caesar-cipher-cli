@@ -9,6 +9,9 @@ if (output) {
 
 module.exports = async (content) => {
     try {
+        if (!output) {
+           return;
+        }
         return await fs.appendFile(fileName, content + "\r\n");
     }
     catch (error) {
