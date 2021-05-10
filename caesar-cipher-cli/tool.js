@@ -1,37 +1,24 @@
-const args = require('./src/input');
-
-const file = require('./src/readFile.js');
+const { action, shift, input } = require('./src/input');
+const readFile = require('./src/readFile');
+const writeFile = require('./src/writeFile');
+const encode = require('./src/coder')
 
 try {
-
-//(async () => await file())().then(console.log)
-
-//const writeFile = require('./src/writeFile.js');
-
-// const encode = require('./src/coder')
-//
-// console.log(encode("Lazy фывфывф dog", 27));
-
-
-// writeFile();
-// //file().then(console.log)
-// (async () => {
-//     let b = await file();
-//     console.log(b)
-// })(file)
-//console.log(file())
-
-//
-    if (input.action == 'encode'){
+    if (action == 'encode' && input) {
+        (async () => await readFile())()
+            .then((str) => encode(str, shift))
+            .then((content) => writeFile(content))
 
     }
-//const toRead = require('./src/writeFile.js');
+    else if (action == 'decode' && input) {
+        (async () => await readFile())()
+            .then((str) => encode(str, -shift))
+            .then((content) => writeFile(content))
 
-//(async () => await toRead('/home/user/RSSchool/NodeJS/task1/caesar-cipher-cli/caesar-cipher-cli/data.txt'))().then(console.log)
+    }
 
 }
-
 catch(error) {
-    console.error("error: input error", error.path)
+    console.error("error: input error", error.path, error)
     process.exit(1);
 }
