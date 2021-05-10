@@ -1,17 +1,13 @@
 const fs = require('fs').promises;
 const path = require('path');
-const args = require('./input');
+const { output } = require('./input');
 
-if (args.output) {
-    var fileName = path.normalize(args.output);
+let fileName = '';
+if (output) {
+    fileName = path.normalize(output);
 }
-// module.exports = async () => {
-//     const asyncFunc = async () => await fs.appendFile('output.txt', 'demo text', 'utf8');
-//     //asyncFunc().then(console.log)
-//     return await asyncFunc();
-// };
 
-const toWrite = async (content) => {
+module.exports = async (content) => {
     try {
         return await fs.appendFile(fileName, content + "\r\n");
     }
@@ -20,5 +16,3 @@ const toWrite = async (content) => {
         process.exit(1);
     }
 };
-
-module.exports = toWrite;

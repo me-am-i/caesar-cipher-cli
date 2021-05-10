@@ -1,9 +1,10 @@
 const fs = require('fs').promises;
 const path = require('path');
-const args = require('./input');
+const { input } = require('./input');
 
-if (args.input) {
-    var fileName = path.normalize(args.input);
+let fileName = '';
+if (input) {
+    fileName = path.normalize(input);
 }
 
 module.exports = async () => {
