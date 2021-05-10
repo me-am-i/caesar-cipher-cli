@@ -1,4 +1,4 @@
-# caesar-cipher-cli
+## caesar-cipher-cli
 
 Для запуска выполните команду
 
@@ -14,3 +14,12 @@
 ```$ node tool -a encode -s 3 -i "./input.txt" -o "./output.txt"```
 
 ```$ node tool --action encode --shift 3 --input input.txt --output output.txt```
+
+
+####Для установки выполните в терминале команды:
+
+1. ```$ git clone git@github.com:me-am-i/caesar-cipher-cli.git``` 
+2. ```$ cd caesar-cipher-cli/``` 
+3. ```$ git checkout caesar-cipher-cli-tool``` 
+5. ```$ cd caesar-cipher-cli/``` 
+4. ```$ npm install```

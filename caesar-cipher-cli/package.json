@@ -2,7 +2,7 @@
   "name": "caesar-cipher-cli",
   "version": "1.0.0",
   "description": "Caesar cipher CLI tool",
-  "main": "input.js",
+  "main": "src/input.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/me-am-i/caesar-cipher-cli#readme",
   "dependencies": {
-    "commander": "^6.1.0"
+    "commander": "^6.2.1"
   }
 }

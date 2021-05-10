@@ -102,3 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
+/caesar-cipher-cli/.idea/
+/caesar-cipher-cli/package-lock.json
